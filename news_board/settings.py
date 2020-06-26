@@ -83,6 +83,18 @@ DATABASES = {
     }
 }
 
+# PostgreSQL
+#DATABASES = {
+#    'default': {
+#    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#    'NAME': 'news_board',
+#    'USER': 'admin',
+#    'PASSWORD': '321admin123',
+#    'HOST': 'localhost',
+#    'PORT': '',
+#    }
+#}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
