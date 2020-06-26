@@ -38,15 +38,7 @@ class MessageView(APIView):
             message_saved = serializer.save()
         return Response({"success": "Message '{}' created successfully".format(message_saved.title)})
 
-    def put(self, request, pk):
-        saved_message = get_object_or_404(Message.objects.all(), pk=pk)
-        data = request.data.get('message')
-        serializer = MessageSerializer(instance=saved_message, data=data, partial=True)
-        if serializer.is_valid(raise_exception=True):
-            message_saved = serializer.save()
-        return Response({
-            "success": "Message '{}' updated successfully".format(message_saved.title)
-        })
+    
 
     def delete(self, request, pk):
         message = get_object_or_404(Message.objects.all(), pk=pk)
