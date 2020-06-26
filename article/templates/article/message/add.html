@@ -1,0 +1,15 @@
+{% extends "article/base.html" %}
+{% block title %}Add message{% endblock %}
+{% block content %}
+    {% if post %}
+        <h1>Message added</h1>
+        <p>"{{ message.title }}" was successfully added.</p>
+    {% else %}
+        <h1>Add message{{ message.title }}</h1>
+        <form action="." method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="Add">
+        </form>
+    {% endif %}
+{% endblock %}

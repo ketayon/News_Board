@@ -1,0 +1,15 @@
+{% extends "article/base.html" %}
+{% block title %}Add comment{% endblock %}
+{% block content %}
+    {% if comment %}
+        <h1>Comment added</h1>
+        <p>"{{ comment.body }}" was successfully added.</p>
+    {% else %}
+        <h1>Add comment{{ comment.body }}</h1>
+        <form action="." method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="Add">
+        </form>
+    {% endif %}
+{% endblock %}

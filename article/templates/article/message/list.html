@@ -1,0 +1,16 @@
+{% extends "article/base.html" %}
+{% block title %}Hacker News{% endblock %}
+{% block content %}
+    <h1>Hacker News</h1>
+        {% for message in messages %}
+            <h2>
+                <a href="{{ message.link }}">{{ message.title }}</a>
+            </h2>
+            <p class="date">Published {{ message.creation_date }} by {{ message.author_name }}</p>
+            <p class="date">Commented {{ comment.body }} by {{ comment.name }}</p>
+        {% endfor %}
+
+        
+        
+        
+{% endblock %}
